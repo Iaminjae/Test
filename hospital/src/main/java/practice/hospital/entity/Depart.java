@@ -14,9 +14,9 @@ public class Depart {
     @Column(name = "depart_name")
     private String name;
 
-    private int number;
+    private String number;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
 }

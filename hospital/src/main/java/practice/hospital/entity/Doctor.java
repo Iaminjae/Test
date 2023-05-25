@@ -19,7 +19,7 @@ public class Doctor {
     private String name;
     private Long career;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "depart_id")
     private Depart depart;
 }

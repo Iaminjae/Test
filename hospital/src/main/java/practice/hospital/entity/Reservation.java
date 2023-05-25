@@ -3,10 +3,8 @@ package practice.hospital.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -14,13 +12,13 @@ import javax.persistence.Table;
 @Table(name = "reservation")
 public class Reservation {
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    private int time;
+    private LocalDateTime time;
 }
